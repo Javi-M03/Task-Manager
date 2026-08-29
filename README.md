@@ -1,2 +1,4 @@
 # Task-Manager
-Construccion de un CRUD y aplicar los conceptos básicos de DevOps 
+
+Construción de un CRUD y aplicar los conceptos básicos de DevOps
+
