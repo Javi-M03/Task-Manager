@@ -9,7 +9,7 @@ namespace Task_Manager.DTOs
     {
         [Required]
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public bool IsDone { get; set; }
         public DateTime CreatedAt { get; set; }
