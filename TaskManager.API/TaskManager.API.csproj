@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Task_Manager</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <NoWarn>$(NoWarn);1591;1573;1572;1571</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
