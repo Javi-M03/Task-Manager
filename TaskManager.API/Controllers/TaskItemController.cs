@@ -55,13 +55,14 @@ namespace Task_Manager.Controllers
         /// Actualizamos una tarea existente según el ID especificado.
         /// </summary>
         /// <param name="id">El ID de la tarea a modificar.</param>
-        /// <response code="200">La tarea se modificó con éxito.</response>
+        /// <response code="204">La tarea se modificó con éxito.</response>
+        /// <response code="400">El campo no puede ir vacío.</response>
         /// <response code="404">No se encontró tarea con el ID especificado.</response>
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, UpdateTaskItemDto dto)
         {
             var success = await _service.UpdateAsync(id, dto);
-            return success ? NotFoundProblem(id) : NotFound();
+            return success ? NoContent() : NotFoundProblem(id);
         }
         /// <summary>
         /// Eliminamos una tarea existente según el ID especificado.
@@ -73,7 +74,7 @@ namespace Task_Manager.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _service.DeleteAsync(id);
-            return success ? NotFoundProblem(id) : NotFound();
+            return success ? NoContent() : NotFoundProblem(id);
         }
 
         private ActionResult NotFoundProblem(int id) =>
