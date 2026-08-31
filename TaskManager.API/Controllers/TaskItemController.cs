@@ -5,6 +5,9 @@ using Task_Manager.Services;
 
 namespace Task_Manager.Controllers
 {
+    /// <summary>
+    /// Controlador encargado del manejo de endpoints de la Api.
+    /// </summary>
     [ApiController]
     [Route("api/task")]
     public class TaskItemController : ControllerBase
@@ -39,8 +42,6 @@ namespace Task_Manager.Controllers
         /// <summary>
         /// Creamos una nueva tarea.
         /// </summary>
-        /// <param name="title">El Titulo de la nueva tarea.</param>
-        /// <param name="description">Descripción de la nueva tarea.</param>
         /// <response code="201">Se creó la nueva tarea con éxito.</response>
         /// <response code="400">El título no puede ir vacío.</response>
 
@@ -54,9 +55,6 @@ namespace Task_Manager.Controllers
         /// Actualizamos una tarea existente según el ID especificado.
         /// </summary>
         /// <param name="id">El ID de la tarea a modificar.</param>
-        /// <param name="title">El titulo de tarea a modificar.</param>
-        /// <param name="description">La descripción de la tarea a modificar.</param>
-        /// <param name="isDone">El estado de completado de la tarea a modificar.</param>
         /// <response code="200">La tarea se modificó con éxito.</response>
         /// <response code="404">No se encontró tarea con el ID especificado.</response>
         [HttpPut("{id}")]
