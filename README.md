@@ -99,7 +99,7 @@ El proyecto tiene la siguiente estructura :
 
 ### Base de datos:
 
-Este proyecto utiliza SQLite y Entity Framework, **la primera vez que se ejecuta el proyecto es necesario crear la base de datos de nombre taskmanager.db en caso de que esta no exista.** La base de datos se crea ejecutando el siguiente comando:
+Este proyecto utiliza SQLite y Entity Framework, **la primera vez que se ejecuta el proyecto la base de datos "taskmanager.db" se crea de manera automática, en caso de que sea necesario crear la base de datos manualmente es necesario ejecutar los siguientes comandos : **
 
 * *dotnet tool install  dotnet-ef*
 * La consola debe estar apuntando a TaskManager.API antes de ejecutar el comando : *dotnet ef database update*
@@ -125,7 +125,7 @@ Si como alternativa uno prefiere utilizar la consola de comandos (como por ejemp
 * Restaurar dependencias : *dotnet restore*
 * Realizar el build del proyecto : *dotnet build*
 * Ejecutar la api : *dotnet run --project TaskManager.API*
-* Abrir swagger en la url: http://localhost:<PORT>/swagger, puerto por defecto es 7280.
+* Abrir swagger en la url: http://localhost:PORT/swagger, puerto por defecto es 7280.
 
 
 
@@ -170,7 +170,7 @@ De manera automatica realiza el build del proyecto y tambien ejecuta los casos d
 * Instalar Entity Framework : *dotnet tool install  dotnet-ef*
 * Crear o actualizar la estructura de la base de datos : *dotnet ef database update*
 * Construir la Docker image:  *docker build -t taskmanager-api .*
-* Ejecutar el contenedor: *docker run -d -´p 8080:8080 --name taskmanager-api taskmanager-api* 
+* Ejecutar el contenedor: *docker run -d -p 8080:8080 --name taskmanager-api taskmanager-api* 
 * Revisar el estado del contenedor : *docker ps* 
 * *Ver Logs del contenedor : docker logs taskmanager-api* 
 * *D*etener el contenedor : *docker stop taskmanager-api* 
